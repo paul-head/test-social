@@ -25,7 +25,7 @@ SECRET_KEY = '$ly!b1e#^%&$pox_$^*q%^&r+j=t*+9ysm1l29el-wrbr!kd(l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['soci.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -33,13 +33,18 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'account.apps.AccountConfig',
 
-
     'django.contrib.admin',
     'django.contrib.auth',
+#    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # 'allauth',
+    # 'allauth.account',
+    # 'allauth.socialaccount',
+    # 'allauth.socialaccount.providers.google',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +139,12 @@ LOGOUT_URL = 'logout'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 #AUTH_USER_MODEL = 'account.Profile'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+    # 'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+
+#SITE_ID = 1
