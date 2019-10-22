@@ -25,7 +25,7 @@ SECRET_KEY = '$ly!b1e#^%&$pox_$^*q%^&r+j=t*+9ysm1l29el-wrbr!kd(l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['soci.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['soci.com', 'localhost', '127.0.0.1', 'f7221f65.ngrok.io']
 
 
 # Application definition
@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     # 'allauth.account',
     # 'allauth.socialaccount',
     # 'allauth.socialaccount.providers.google',
+
+    'images.apps.ImagesConfig',
 ]
 
 MIDDLEWARE = [
